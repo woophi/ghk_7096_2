@@ -1,6 +1,7 @@
 import { Button } from '@alfalab/core-components/button/cssm';
 import { Collapse } from '@alfalab/core-components/collapse/cssm';
 import { Gap } from '@alfalab/core-components/gap/cssm';
+import { Grid } from '@alfalab/core-components/grid/cssm';
 import { PureCell } from '@alfalab/core-components/pure-cell/cssm';
 import { Typography } from '@alfalab/core-components/typography/cssm';
 import { BriefcaseMIcon } from '@alfalab/icons-glyph/BriefcaseMIcon';
@@ -26,7 +27,7 @@ import { LS, LSKeys } from './ls';
 import { appSt } from './style.css';
 
 const LINK =
-  '/sdui_screen?screenName=InvestmentLongread&fromCurrent=true&shouldUseBottomSafeArea=true&endpoint=v1/invest-main-screen-view/investment-longread/94346%3flocation=AM%26campaignCode=GH';
+  '/sdui_screen?screenName=InvestmentLongread&fromCurrent=true&shouldUseBottomSafeArea=true&endpoint=v1/invest-main-screen-view/investment-longread/94356%3flocation=AM%26campaignCode=GH';
 
 if (LS.getItem(LSKeys.ShowThx, false)) {
   window.location.replace(LINK);
@@ -34,35 +35,35 @@ if (LS.getItem(LSKeys.ShowThx, false)) {
 
 const itemsWG = [
   {
-    icon: <ShieldMIcon />,
+    icon: <ShieldMIcon color="#fff" />,
     title: 'Страховку от потерь на фондовом рынке на 30 дней',
   },
   {
-    icon: <BubbleLinesMIcon />,
+    icon: <BubbleLinesMIcon color="#fff" />,
     title: 'В социальной сети Альфа-Инвестиции статус участника, прошедшего обучающий трек от Альфа-Банка',
   },
   {
-    icon: <ChartColumnThreeAscArrowMIcon />,
+    icon: <ChartColumnThreeAscArrowMIcon color="#fff" />,
     title: 'Возможность поделиться успехами в обучении и инвестировании с родителями и друзьями',
   },
   {
-    icon: <StarPointerMIcon />,
-    title: 'Стикер на смартфон с эксклюзивных дизайном для оплаты покупок',
+    icon: <StarPointerMIcon color="#fff" />,
+    title: 'Стикер на смартфон для оплаты покупок с эксклюзивным дизайном',
   },
 ];
 const itemsExpert = [
   {
-    icon: <BriefcaseMIcon width={16} height={16} />,
+    icon: <BriefcaseMIcon width={16} height={16} color="#fff" />,
     title: 'Опыт работы',
     text: 'Опыт с 2011 года. Общий стаж работы с клиентами Альфа‑Банка составляет более 4 лет.',
   },
   {
-    icon: <CrownMIcon width={16} height={16} />,
+    icon: <CrownMIcon width={16} height={16} color="#fff" />,
     title: 'Специализация',
     text: 'Анализ рыночных взаимосвязей, с углубленным изучением финансового менеджмента компаний и технического анализа',
   },
   {
-    icon: <SquareAcademicCapMIcon width={16} height={16} />,
+    icon: <SquareAcademicCapMIcon width={16} height={16} color="#fff" />,
     title: 'Образование',
     text: 'Диплом с отличием Финансового Университета РФ и Бакалавриат Американского Университета Bloomsburg University of State PA',
   },
@@ -107,129 +108,119 @@ export const App = () => {
   return (
     <>
       <div className={appSt.container}>
-        <img src={hb} width="100%" height={238} alt="hb" style={{ objectFit: 'contain', margin: '0 auto' }} />
-        <Typography.TitleResponsive tag="h1" view="medium" font="system" weight="semibold">
-          Обучение инвестициям с наставником за 30 дней
-        </Typography.TitleResponsive>
-        <Typography.Text view="primary-medium" color="secondary">
-          Для вашего ребенка от 14 лет с одним из лучших инвестиционных брокеров Альфа-Банка
-        </Typography.Text>
+        <div className={appSt.glass}>
+          <img src={hb} width="100%" height={238} alt="hb" style={{ objectFit: 'contain', margin: '0 auto' }} />
+          <Typography.TitleResponsive tag="h1" view="medium" font="system" weight="medium" color="primary-inverted">
+            Обучение инвестициям с наставником за 30 дней
+          </Typography.TitleResponsive>
+          <Typography.Text view="primary-medium" color="primary-inverted">
+            Для вашего ребенка от 14 лет с одним из лучших инвестиционных брокеров
+            <br />
+            Альфа-Банка
+          </Typography.Text>
+        </div>
 
-        <Typography.TitleResponsive style={{ marginTop: '12px' }} tag="h2" view="small" font="system" weight="medium">
-          Чему научится ваш ребенок
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
+          Чему научитесь
         </Typography.TitleResponsive>
 
         <PureCell>
           <PureCell.Graphics verticalAlign="center">
-            <img src={oneImg} width={46} height={46} alt="цифра 1" />
+            <img src={oneImg} width={48} height={48} alt="цифра 1" />
           </PureCell.Graphics>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.Text view="primary-small" weight="bold">
+              <Typography.Text view="primary-small" weight="bold" color="primary-inverted">
                 Понимать инвестиции
               </Typography.Text>
-              <Typography.Text view="primary-small">
-                Разберётся как работают акции, фонды и облигации — без заумных слов
+              <Typography.Text view="primary-small" color="primary-inverted">
+                Разберётесь, как работают акции, фонды и облигации — без заумных слов
               </Typography.Text>
             </PureCell.Main>
           </PureCell.Content>
         </PureCell>
         <PureCell>
           <PureCell.Graphics verticalAlign="center">
-            <img src={twoImg} width={46} height={46} alt="цифра 2" />
+            <img src={twoImg} width={48} height={48} alt="цифра 2" />
           </PureCell.Graphics>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.Text view="primary-small" weight="bold">
+              <Typography.Text view="primary-small" weight="bold" color="primary-inverted">
                 Управлять рисками
               </Typography.Text>
-              <Typography.Text view="primary-small">
-                Научится не ставить всё на одну карту и защищать свои деньги
+              <Typography.Text view="primary-small" color="primary-inverted">
+                Научитесь не ставить всё на одну карту и защищать свои деньги
               </Typography.Text>
             </PureCell.Main>
           </PureCell.Content>
         </PureCell>
         <PureCell>
           <PureCell.Graphics verticalAlign="center">
-            <img src={threeImg} width={46} height={46} alt="цифра 3" />
+            <img src={threeImg} width={48} height={48} alt="цифра 3" />
           </PureCell.Graphics>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.Text view="primary-small" weight="bold">
+              <Typography.Text view="primary-small" weight="bold" color="primary-inverted">
                 Контролировать эмоции
               </Typography.Text>
-              <Typography.Text view="primary-small">
-                Поймёт как не паниковать при падении и не терять голову при росте
+              <Typography.Text view="primary-small" color="primary-inverted">
+                Поймёте, как не паниковать при падении и не терять голову при росте
               </Typography.Text>
             </PureCell.Main>
           </PureCell.Content>
         </PureCell>
 
-        <Typography.TitleResponsive style={{ marginTop: '12px' }} tag="h2" view="small" font="system" weight="medium">
-          Что получит в конце обучения
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
+          Что получите в конце обучения
         </Typography.TitleResponsive>
         {itemsWG.map((item, index) => (
           <PureCell key={index}>
             <PureCell.Graphics verticalAlign="top">{item.icon}</PureCell.Graphics>
             <PureCell.Content>
               <PureCell.Main>
-                <Typography.Text view="primary-medium">{item.title}</Typography.Text>
+                <Typography.Text view="primary-medium" color="primary-inverted">
+                  {item.title}
+                </Typography.Text>
               </PureCell.Main>
             </PureCell.Content>
           </PureCell>
         ))}
 
-        <Typography.TitleResponsive style={{ marginTop: '12px' }} tag="h2" view="small" font="system" weight="medium">
-          Кто будет наставником
-        </Typography.TitleResponsive>
-
-        <div className={appSt.box}>
-          <PureCell>
-            <PureCell.Graphics verticalAlign="center">
-              <img src={expert} width={46} height={46} alt="эксперт" />
-            </PureCell.Graphics>
-            <PureCell.Content>
-              <PureCell.Main>
-                <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium">
-                  Илья Шевченко
-                </Typography.TitleResponsive>
-                <Typography.Text view="secondary-large" color="secondary">
-                  Финансовый эксперт · Альфа-Банк
-                </Typography.Text>
-              </PureCell.Main>
-            </PureCell.Content>
-          </PureCell>
-
-          {itemsExpert.map((item, index) => (
-            <PureCell key={index}>
-              <PureCell.Graphics verticalAlign="top">{item.icon}</PureCell.Graphics>
-              <PureCell.Content>
-                <PureCell.Main>
-                  <Typography.Text view="secondary-large" weight="medium">
-                    {item.title}
-                  </Typography.Text>
-                  <Gap size={8} />
-                  <Typography.Text view="secondary-large" color="secondary">
-                    {item.text}
-                  </Typography.Text>
-                </PureCell.Main>
-              </PureCell.Content>
-            </PureCell>
-          ))}
-        </div>
-
-        <Typography.TitleResponsive style={{ marginTop: '12px' }} tag="h2" view="small" font="system" weight="medium">
-          Что в рамках обучения
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
+          Что получите в рамках обучения
         </Typography.TitleResponsive>
 
         <PureCell className={appSt.box2}>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium">
+              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium" color="primary-inverted">
                 Прямые эфиры с персональным брокером
               </Typography.TitleResponsive>
-              <Typography.Text view="secondary-large" color="secondary">
-                Записи эфиров будут доступны в приложении Альфа-Инвестиций
+              <Gap size={4} />
+
+              <Typography.Text view="secondary-large" color="primary-inverted">
+                Запись и эфиры доступны в приложении Альфа-Инвестиций
               </Typography.Text>
             </PureCell.Main>
           </PureCell.Content>
@@ -241,10 +232,12 @@ export const App = () => {
         <PureCell className={appSt.box2}>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium">
+              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium" color="primary-inverted">
                 Доступ к рекомендациям и стратегиям от наставника
               </Typography.TitleResponsive>
-              <Typography.Text view="secondary-large" color="secondary">
+              <Gap size={4} />
+
+              <Typography.Text view="secondary-large" color="primary-inverted">
                 Готовые стратегии от наставника для минимизации рисков и повышения доходности портфеля
               </Typography.Text>
             </PureCell.Main>
@@ -257,10 +250,12 @@ export const App = () => {
         <PureCell className={appSt.box2}>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium">
+              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium" color="primary-inverted">
                 Легкое и понятное обучение
               </Typography.TitleResponsive>
-              <Typography.Text view="secondary-large" color="secondary">
+              <Gap size={4} />
+
+              <Typography.Text view="secondary-large" color="primary-inverted">
                 Краткий и доступный формат
               </Typography.Text>
             </PureCell.Main>
@@ -273,10 +268,11 @@ export const App = () => {
         <PureCell className={appSt.box2}>
           <PureCell.Content>
             <PureCell.Main>
-              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium">
+              <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium" color="primary-inverted">
                 Доступ к закрытому каналу наставника
               </Typography.TitleResponsive>
-              <Typography.Text view="secondary-large" color="secondary">
+              <Gap size={4} />
+              <Typography.Text view="secondary-large" color="primary-inverted">
                 Обсуждение сигналов на фондовом рынке и доступ к портфелю наставника
               </Typography.Text>
             </PureCell.Main>
@@ -286,7 +282,95 @@ export const App = () => {
           </PureCell.Graphics>
         </PureCell>
 
-        <Typography.TitleResponsive style={{ marginTop: '12px' }} tag="h2" view="small" font="system" weight="medium">
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
+          Кто будет наставником
+        </Typography.TitleResponsive>
+
+        <div className={appSt.box}>
+          <PureCell>
+            <PureCell.Graphics verticalAlign="center">
+              <img src={expert} width={46} height={46} alt="эксперт" />
+            </PureCell.Graphics>
+            <PureCell.Content>
+              <PureCell.Main>
+                <Typography.TitleResponsive tag="h3" view="xsmall" font="system" weight="medium" color="primary-inverted">
+                  Илья Шевченко
+                </Typography.TitleResponsive>
+                <Typography.Text view="secondary-large" color="secondary-inverted">
+                  Финансовый эксперт · Альфа-Банк
+                </Typography.Text>
+              </PureCell.Main>
+            </PureCell.Content>
+          </PureCell>
+
+          {itemsExpert.map((item, index) => (
+            <PureCell key={index}>
+              <PureCell.Graphics verticalAlign="top">{item.icon}</PureCell.Graphics>
+              <PureCell.Content>
+                <PureCell.Main>
+                  <Typography.Text view="secondary-large" weight="medium" color="primary-inverted">
+                    {item.title}
+                  </Typography.Text>
+                  <Gap size={8} />
+                  <Typography.Text view="secondary-large" color="secondary-inverted">
+                    {item.text}
+                  </Typography.Text>
+                </PureCell.Main>
+              </PureCell.Content>
+            </PureCell>
+          ))}
+        </div>
+
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
+          Потенциальная доходность
+        </Typography.TitleResponsive>
+
+        <Grid.Row gutter={{ mobile: 8, desktop: 16 }}>
+          <Grid.Col width="6">
+            <div className={appSt.box3}>
+              <Typography.TitleResponsive tag="h4" view="small" font="system" weight="semibold" color="primary-inverted">
+                +20%
+              </Typography.TitleResponsive>
+              <Typography.Text view="primary-small" color="primary-inverted">
+                С наставником
+              </Typography.Text>
+            </div>
+          </Grid.Col>
+          <Grid.Col width="6">
+            <div className={appSt.box3}>
+              <Typography.TitleResponsive tag="h4" view="small" font="system" weight="semibold" color="primary-inverted">
+                +4,5%
+              </Typography.TitleResponsive>
+              <Typography.Text view="primary-small" color="primary-inverted">
+                Самостоятельно
+              </Typography.Text>
+            </div>
+          </Grid.Col>
+        </Grid.Row>
+        <div></div>
+
+        <Typography.TitleResponsive
+          style={{ marginTop: '12px' }}
+          tag="h2"
+          view="small"
+          font="system"
+          weight="medium"
+          color="primary-inverted"
+        >
           Дополнительные вопросы
         </Typography.TitleResponsive>
 
@@ -304,22 +388,28 @@ export const App = () => {
               }}
               className={appSt.rowSb}
             >
-              <Typography.Text view="primary-medium" weight="medium">
+              <Typography.Text view="primary-medium" weight="medium" color="primary-inverted">
                 {faq.question}
               </Typography.Text>
               {collapsedItems.includes(String(index + 1)) ? (
                 <div style={{ flexShrink: 0 }}>
-                  <ChevronUpMIcon />
+                  <ChevronUpMIcon color="#fff" />
                 </div>
               ) : (
                 <div style={{ flexShrink: 0 }}>
-                  <ChevronDownMIcon />
+                  <ChevronDownMIcon color="#fff" />
                 </div>
               )}
             </div>
             <Collapse expanded={collapsedItems.includes(String(index + 1))}>
               {faq.answers.map((answerPart, answerIndex) => (
-                <Typography.Text key={answerIndex} tag="p" defaultMargins={false} view="primary-medium">
+                <Typography.Text
+                  key={answerIndex}
+                  tag="p"
+                  defaultMargins={false}
+                  view="primary-medium"
+                  color="primary-inverted"
+                >
                   {answerPart}
                 </Typography.Text>
               ))}
@@ -330,10 +420,16 @@ export const App = () => {
       <Gap size={96} />
 
       <div className={appSt.bottomBtn}>
-        <Button loading={loading} block view="primary" onClick={submit}>
-          Оплатить курс обучения ребенка
+        <Button
+          style={{ backgroundColor: '#F2F3F5', color: '#030306E0' }}
+          loading={loading}
+          block
+          view="primary"
+          onClick={submit}
+        >
+          Начать обучение
           <br />
-          499 ₽
+          <Typography.Text view="secondary-large">499 ₽ за весь курс</Typography.Text>
         </Button>
       </div>
     </>
